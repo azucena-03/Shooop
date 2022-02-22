@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shooop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- -------------------------------------------ICONS-------------------------------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- -------------------------------------------CSS-------------------------------------- -->
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a  class="nav__logo" asp-controller="Home" asp-action="Index">Shooop</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" asp-area="" asp-controller="Home" asp-action="Index">Home</i></a></li>
+                    <li class="nav__item"><a class="nav__link" asp-area="" asp-controller="Home" asp-action="LogIn">log In</a></li>
+                    <li class="nav__item"><a class="nav__link" asp-area="" asp-controller="Product" asp-action="Index">Shop</a></li>
+                    <li class="nav__item"><a class="nav__link" asp-area="" asp-controller="Home" asp-action="Cart"><i class='bx bx-cart'></i></a></li>
+                </ul>
+            </div>
+
+            <i class='bx bx-menu nav__toggle' id="nav-toggle"></i>
+
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- -------------------------------FOOTER SECTION---------------------------------- -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__info">
+                <a href="#" class="nav__logo">Shooop</a>
+                <p class="footer__description">proof that the most beautiful <br> accesories are here</p>
+            </div>
+            <div class="footer__menu">
+                <h2 class="footer__title">explore</h2>
+                <a href="#" class="footer__link">home</a>
+                <a href="#" class="footer__link">cart</a>
+                <a href="#" class="footer__link">log in</a>
+            </div>
+            <div class="footer__menu">
+                <h2 class="footer__title">about us</h2>
+                <a href="#" class="footer__link">support center</a>
+                <a href="#" class="footer__link">customer support</a>
+                <a href="#" class="footer__link">about us</a>
+            </div>
+            <div class="footer__social">
+                <h2 class="footer__title">follow</h2>
+                <a href="#" class="footer__link">facebook</a>
+                <a href="#" class="footer__link">twitter</a>
+                <a href="#" class="footer__link">instagram</a>
+            </div>
+
+        </div>
+        <p class="footer__copy">&#169; All rights reserved shooop, 2022</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/index.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

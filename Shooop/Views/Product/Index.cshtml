@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Shooop.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_customLayout.cshtml";
+}
+
+<section class="product section container">
+    <h1 class="section__title">Products</h1>
+
+    <div class="d-flex justify-content-end" >
+        <a class="btn-dark p-2 rounded" asp-controller="Product" asp-action="create">create a new product</a>
+    </div>
+
+    @if (Model.Count() > 0 )
+    {
+        <div class="product__items  grid">
+
+            @foreach (var product in Model)
+            {
+                <div class="product__item">
+                    <img class="product__img" src="~/@product.image" alt="">
+                    <div class="product__data">
+                        <div class="product__info">
+                            <h2 class="product__title">@product.productName</h2>
+                            <span class="product__price">@product.price</span>
+                        </div>
+                        <a class="btn btn__product" asp-controller="Home" asp-action="Index">more</a>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    }
+     else
+     {
+         <p class="section__title py-4">There's no products to show</p>
+     }
+
+</section>
+
+
+
+

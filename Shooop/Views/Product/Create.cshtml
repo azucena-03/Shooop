@@ -1,0 +1,26 @@
+﻿@model Shooop.Models.Product
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_customLayout.cshtml";
+}
+
+<form action="create" method="post" class="container section">
+    <div class="form-group">
+        <label asp-for="productName"></label>
+        <input class="form-control" asp-for="productName" type="text"/>
+    </div>
+  
+    <div class="form-group">
+        <label asp-for="price"></label>
+        <input class="form-control" asp-for="price" type="number"/>
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="image"></label>
+        <input class="form-control" asp-for="image"  type="file"/>
+    </div>
+
+    <input class="btn-dark p-2 " type="submit"  value="save" />
+    <a class="btn-dark p-2 " asp-action="Index">back</a>
+</form>
+
